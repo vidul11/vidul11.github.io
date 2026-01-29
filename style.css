@@ -54,3 +54,74 @@ body {
     background: var(--f1-red);
     margin-top: 20px;
 }
+
+
+/* Layout Styling */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.panel {
+    background: rgba(31, 31, 39, 0.8);
+    border-left: 4px solid var(--f1-red);
+    padding: 20px;
+}
+
+.panel-header {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+/* Skills Bar Styling */
+.stat-bar { margin-bottom: 15px; font-size: 0.9rem; }
+.bar { 
+    height: 8px; 
+    background: #333; 
+    margin-top: 5px; 
+    position: relative; 
+}
+.fill { 
+    height: 100%; 
+    background: var(--f1-red); 
+    box-shadow: 0 0 10px var(--f1-red);
+}
+
+/* Project Entry Styling */
+.project-entry {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+.sector-tag {
+    background: var(--f1-purple);
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 2px;
+}
+
+.btn-link {
+    color: var(--f1-red);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Telemetry Nav */
+.telemetry-nav {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    font-size: 0.8rem;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .content-grid { grid-template-columns: 1fr; }
+}

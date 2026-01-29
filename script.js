@@ -26,3 +26,12 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }, 600); // Speed of lights turning on
 });
+
+function updateClock() {
+    const now = new Date();
+    const timeString = now.getHours().toString().padStart(2, '0') + ":" + 
+                       now.getMinutes().toString().padStart(2, '0') + ":" + 
+                       now.getSeconds().toString().padStart(2, '0');
+    document.getElementById('clock').innerText = timeString;
+}
+setInterval(updateClock, 1000);

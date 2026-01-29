@@ -18,28 +18,65 @@
     </div>
 
     <main id="main-content" class="hidden">
-        <nav>
-            <div class="logo">DRV_01</div>
-            <div class="sector-times">
-                <span>S1: <span class="purple">28.4</span></span>
-                <span>S2: <span class="purple">31.2</span></span>
-                <span>S3: <span class="green">22.1</span></span>
-            </div>
+        <nav class="telemetry-nav">
+            <div class="stat">DRV: <span>USER_11</span></div>
+            <div class="stat">STATUS: <span class="green">P1 - ACTIVE</span></div>
+            <div class="stat">LAP: <span id="clock">00:00:00</span></div>
         </nav>
 
-        <section class="hero">
-            <h1 class="glitch" data-text="YOUR NAME">YOUR NAME</h1>
-            <p class="tagline">// FULL STACK ENGINEER / AERODYNAMICS OF CODE</p>
-            <div class="cta-line"></div>
-        </section>
-
-        <section class="grid-layout">
-            <div class="card">
-                <span class="rank">P1</span>
-                <h3>Project: Aero-Dashboard</h3>
-                <p>High-performance data visualization built for speed.</p>
+        <header class="hero">
+            <div class="driver-number">01</div>
+            <div class="driver-info">
+                <h1>YOUR NAME</h1>
+                <p class="team-name">// TEAM: INDEPENDENT DEVELOPER</p>
             </div>
-        </section>
+        </header>
+
+        <div class="content-grid">
+            <section class="panel stats">
+                <h2 class="panel-header">DRIVER PERFORMANCE DATA</h2>
+                <div class="stat-bar">
+                    <span>FRONT-END (PACE)</span>
+                    <div class="bar"><div class="fill" style="width: 90%;"></div></div>
+                </div>
+                <div class="stat-bar">
+                    <span>BACK-END (POWER)</span>
+                    <div class="bar"><div class="fill" style="width: 85%;"></div></div>
+                </div>
+                <div class="stat-bar">
+                    <span>UI/UX (AERODYNAMICS)</span>
+                    <div class="bar"><div class="fill" style="width: 75%;"></div></div>
+                </div>
+            </section>
+
+            <section class="panel projects">
+                <h2 class="panel-header">SEASON HIGHLIGHTS</h2>
+                <div class="project-entry">
+                    <span class="sector-tag">PROJECT_ALPHA</span>
+                    <h3>High-Speed Data Visualizer</h3>
+                    <p>Built a real-time dashboard using React and D3.js. Optimized for 0.2s latency.</p>
+                    <a href="#" class="btn-link">VIEW TELEMETRY ></a>
+                </div>
+                <div class="project-entry">
+                    <span class="sector-tag">PROJECT_BETA</span>
+                    <h3>Neural Network Engine</h3>
+                    <p>Python-based AI model designed for predictive analysis of race strategies.</p>
+                    <a href="#" class="btn-link">VIEW TELEMETRY ></a>
+                </div>
+            </section>
+
+            <section class="panel history">
+                <h2 class="panel-header">CAREER HISTORY</h2>
+                <div class="history-item">
+                    <span class="year">2024-26</span>
+                    <strong>Lead Engineer @ Tech-Force</strong>
+                </div>
+                <div class="history-item">
+                    <span class="year">2022-24</span>
+                    <strong>Junior Developer @ Code-Racing</strong>
+                </div>
+            </section>
+        </div>
     </main>
 
     <script src="script.js"></script>
