@@ -1,0 +1,56 @@
+:root {
+    --f1-red: #e10600;
+    --f1-black: #15151e;
+    --f1-carbon: #1f1f27;
+    --f1-purple: #b62ad6; /* Sector purple */
+}
+
+body {
+    background-color: var(--f1-black);
+    color: white;
+    font-family: 'Chakra Petch', sans-serif;
+    margin: 0;
+    overflow: hidden; /* Prevent scroll during intro */
+}
+
+/* Lights Animation */
+#lights-container {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.light {
+    width: 50px;
+    height: 50px;
+    background: #333;
+    border-radius: 50%;
+    margin: 10px;
+    display: inline-block;
+}
+
+.light.on { background: var(--f1-red); box-shadow: 0 0 20px var(--f1-red); }
+
+/* Content Layout */
+#main-content {
+    padding: 40px;
+    transition: transform 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+#main-content.hidden { transform: translateY(100vh); }
+
+.purple { color: var(--f1-purple); }
+.green { color: #00ff00; }
+
+.cta-line {
+    width: 100px;
+    height: 4px;
+    background: var(--f1-red);
+    margin-top: 20px;
+}
