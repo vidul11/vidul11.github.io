@@ -1,19 +1,22 @@
+/* --- ROOT VARIABLES --- */
 :root {
     --f1-red: #e10600;
     --f1-black: #15151e;
     --f1-carbon: #1f1f27;
-    --f1-purple: #b62ad6; /* Sector purple */
+    --f1-purple: #b62ad6; /* Sector purple for high-performance projects */
+    --f1-grey: #38383f;
 }
 
+/* --- BASE STYLES --- */
 body {
     background-color: var(--f1-black);
     color: white;
     font-family: 'Chakra Petch', sans-serif;
     margin: 0;
-    overflow: hidden; /* Prevent scroll during intro */
+    overflow-x: hidden; 
 }
 
-/* Lights Animation */
+/* --- F1 STARTING LIGHTS --- */
 #lights-container {
     position: fixed;
     height: 100vh;
@@ -35,93 +38,176 @@ body {
     display: inline-block;
 }
 
-.light.on { background: var(--f1-red); box-shadow: 0 0 20px var(--f1-red); }
+.light.on { 
+    background: var(--f1-red); 
+    box-shadow: 0 0 25px var(--f1-red); 
+}
 
-/* Content Layout */
+/* --- MAIN CONTENT & ANIMATION --- */
 #main-content {
     padding: 40px;
     transition: transform 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-#main-content.hidden { transform: translateY(100vh); }
+#main-content.hidden { 
+    transform: translateY(100vh); 
+    opacity: 0;
+}
 
-.purple { color: var(--f1-purple); }
+/* --- NAVIGATION / TELEMETRY --- */
+.telemetry-nav {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--f1-grey);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.red { color: var(--f1-red); font-weight: bold; }
 .green { color: #00ff00; }
 
-.cta-line {
-    width: 100px;
-    height: 4px;
-    background: var(--f1-red);
-    margin-top: 20px;
+/* --- ABOUT SECTION (THE DRIVER) --- */
+.driver-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
 }
 
+.driver-number {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 6rem;
+    color: var(--f1-red);
+    opacity: 0.3;
+    line-height: 1;
+}
 
-/* Layout Styling */
+.bio-text h1 {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+    letter-spacing: -2px;
+}
+
+.bio-text p {
+    line-height: 1.6;
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+/* --- GRID & PANELS --- */
 .content-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-top: 40px;
+    gap: 30px;
 }
 
 .panel {
-    background: rgba(31, 31, 39, 0.8);
+    background: var(--f1-carbon);
     border-left: 4px solid var(--f1-red);
-    padding: 20px;
+    padding: 25px;
+    transition: background 0.3s ease;
+}
+
+.panel:hover {
+    background: #25252d;
 }
 
 .panel-header {
     font-family: 'Syncopate', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: #888;
     margin-bottom: 20px;
     letter-spacing: 2px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
 }
 
-/* Skills Bar Styling */
-.stat-bar { margin-bottom: 15px; font-size: 0.9rem; }
-.bar { 
-    height: 8px; 
-    background: #333; 
-    margin-top: 5px; 
-    position: relative; 
+/* --- SKILLS (TECHNICAL SPECS) --- */
+.stat-group { margin-bottom: 20px; }
+.stat-group h4 {
+    color: var(--f1-red);
+    margin: 0 0 5px 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
 }
-.fill { 
-    height: 100%; 
-    background: var(--f1-red); 
-    box-shadow: 0 0 10px var(--f1-red);
+.stat-group p { font-size: 0.95rem; color: #eee; margin: 0; }
+
+/* --- WORK EXP (RACE HISTORY) --- */
+.history-item { margin-bottom: 25px; }
+.year {
+    font-size: 0.75rem;
+    background: var(--f1-grey);
+    padding: 2px 6px;
+    border-radius: 2px;
+    margin-right: 10px;
 }
 
-/* Project Entry Styling */
-.project-entry {
-    margin-bottom: 30px;
-    border-bottom: 1px solid #333;
-    padding-bottom: 15px;
+.history-item ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
 }
+
+.history-item li {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-bottom: 6px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.history-item li::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: var(--f1-red);
+}
+
+/* --- PROJECTS (SEASON HIGHLIGHTS) --- */
+.projects-full { margin-top: 30px; }
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.project-card {
+    background: #1a1a21;
+    padding: 20px;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--f1-red);
+}
+
 .sector-tag {
     background: var(--f1-purple);
-    font-size: 0.7rem;
-    padding: 2px 8px;
-    border-radius: 2px;
-}
-
-.btn-link {
-    color: var(--f1-red);
-    text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.65rem;
+    padding: 3px 10px;
+    border-radius: 10px;
     font-weight: bold;
 }
 
-/* Telemetry Nav */
-.telemetry-nav {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
-    font-size: 0.8rem;
-}
-
-/* Responsive Fix */
-@media (max-width: 768px) {
-    .content-grid { grid-template-columns: 1fr; }
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 900px) {
+    .content-grid, .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .driver-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .driver-number { font-size: 4rem; }
 }

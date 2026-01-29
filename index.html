@@ -19,64 +19,84 @@
 
     <main id="main-content" class="hidden">
         <nav class="telemetry-nav">
-            <div class="stat">DRV: <span>USER_11</span></div>
-            <div class="stat">STATUS: <span class="green">P1 - ACTIVE</span></div>
+            <div class="stat">DRV: <span>S. VIDUL CHINTHAMANENI</span></div>
+            <div class="stat">TEAM: <span class="red">UC RIVERSIDE / TASL</span></div>
             <div class="stat">LAP: <span id="clock">00:00:00</span></div>
         </nav>
 
-        <header class="hero">
-            <div class="driver-number">01</div>
-            <div class="driver-info">
-                <h1>YOUR NAME</h1>
-                <p class="team-name">// TEAM: INDEPENDENT DEVELOPER</p>
+        <section class="panel about-section">
+            <div class="driver-card">
+                <div class="driver-number">11</div>
+                <div class="bio-text">
+                    <h1 class="glitch" data-text="SAI SURYA VIDUL">SAI SURYA VIDUL</h1>
+                    <p>// Graduate Student Researcher at UC Riverside specializing in **Electrical Engineering**[cite: 5, 16]. Focused on **Trustworthy AI**, **Embodied AI**, and **Vision-Language Models**[cite: 7, 18]. Currently maintaining a **3.82 GPA** while architecting efficient AI frameworks for autonomous navigation[cite: 6, 18].</p>
+                </div>
             </div>
-        </header>
+        </section>
 
         <div class="content-grid">
             <section class="panel stats">
-                <h2 class="panel-header">DRIVER PERFORMANCE DATA</h2>
-                <div class="stat-bar">
-                    <span>FRONT-END (PACE)</span>
-                    <div class="bar"><div class="fill" style="width: 90%;"></div></div>
+                <h2 class="panel-header">TECHNICAL SPECS (PERFORMANCE DATA)</h2>
+                <div class="stat-group">
+                    <h4>AI/ML ENGINE [cite: 12]</h4>
+                    <p>Reinforcement Learning (PPO, IL, DQN), LLMs/VLMs (RLHF, RAG), Computer Vision, NLP</p>
                 </div>
-                <div class="stat-bar">
-                    <span>BACK-END (POWER)</span>
-                    <div class="bar"><div class="fill" style="width: 85%;"></div></div>
+                <div class="stat-group">
+                    <h4>FUEL / LANGUAGES [cite: 11]</h4>
+                    <p>Python, C, SQL, CUDA</p>
                 </div>
-                <div class="stat-bar">
-                    <span>UI/UX (AERODYNAMICS)</span>
-                    <div class="bar"><div class="fill" style="width: 75%;"></div></div>
-                </div>
-            </section>
-
-            <section class="panel projects">
-                <h2 class="panel-header">SEASON HIGHLIGHTS</h2>
-                <div class="project-entry">
-                    <span class="sector-tag">PROJECT_ALPHA</span>
-                    <h3>High-Speed Data Visualizer</h3>
-                    <p>Built a real-time dashboard using React and D3.js. Optimized for 0.2s latency.</p>
-                    <a href="#" class="btn-link">VIEW TELEMETRY ></a>
-                </div>
-                <div class="project-entry">
-                    <span class="sector-tag">PROJECT_BETA</span>
-                    <h3>Neural Network Engine</h3>
-                    <p>Python-based AI model designed for predictive analysis of race strategies.</p>
-                    <a href="#" class="btn-link">VIEW TELEMETRY ></a>
+                <div class="stat-group">
+                    <h4>CHASSIS / TOOLS [cite: 13]</h4>
+                    <p>PyTorch, TensorFlow, Docker, Kubernetes, AWS, GCP, OpenCV</p>
                 </div>
             </section>
 
             <section class="panel history">
-                <h2 class="panel-header">CAREER HISTORY</h2>
+                <h2 class="panel-header">RACE HISTORY (WORK EXPERIENCE)</h2>
+                
                 <div class="history-item">
-                    <span class="year">2024-26</span>
-                    <strong>Lead Engineer @ Tech-Force</strong>
+                    <span class="year">2025-PRES</span>
+                    <strong>TASL - Graduate Researcher [cite: 15, 16]</strong>
+                    <ul>
+                        <li>Architected Embodied AI frameworks for Object Goal Navigation using **PyTorch**[cite: 18].</li>
+                        <li>Integrated **Imitation Learning** and **RL** via Weights & Biases[cite: 19].</li>
+                    </ul>
                 </div>
+
                 <div class="history-item">
-                    <span class="year">2022-24</span>
-                    <strong>Junior Developer @ Code-Racing</strong>
+                    <span class="year">2022-2023</span>
+                    <strong>PathFinder - ML Intern [cite: 21, 22]</strong>
+                    <ul>
+                        <li>Optimized matching engines via **SQL/Pandas**, boosting precision by 17%[cite: 24, 26].</li>
+                        <li>Deployed Streamlit dashboards on **AWS**[cite: 28].</li>
+                    </ul>
+                </div>
+
+                <div class="history-item">
+                    <span class="year">2022</span>
+                    <strong>Gokul - ML Intern [cite: 30, 31]</strong>
+                    <ul>
+                        <li>Time-series modeling for embedded water control systems using **C** and **Python**[cite: 33, 34].</li>
+                    </ul>
                 </div>
             </section>
         </div>
+
+        <section class="panel projects-full">
+            <h2 class="panel-header">SEASON HIGHLIGHTS (KEY PROJECTS)</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <span class="sector-tag">AERO_SAFETY</span>
+                    <h3>VLM Safety Alignment </h3>
+                    <p>Mitigated layer-wise safety vulnerabilities in **LLaVA-1.5** using **RLHF** and **PPO**[cite: 44, 45]. Used multi-GPU parallelism for LoRA fine-tuning[cite: 46].</p>
+                </div>
+                <div class="project-card">
+                    <span class="sector-tag">VISUAL_REASONING</span>
+                    <h3>CLIP + ViT VQA </h3>
+                    <p>Architected a dual-encoder framework for Visual Question Answering, achieving 46% accuracy on **VQA v2** via attention-based fusion[cite: 41, 42].</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="script.js"></script>
