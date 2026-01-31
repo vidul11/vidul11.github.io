@@ -3,10 +3,10 @@
     --f1-red: #e10600;
     --f1-black: #15151e;
     --f1-carbon: #1f1f27;
-    --f1-purple: #b62ad6; /* Tertiary / Metadata Tags */
+    --f1-purple: #b62ad6; 
     --f1-grey: #38383f;
     --f1-white: #ffffff;
-    --f1-cyan: #00d2be; /* Data Link Highlight */
+    --f1-cyan: #00d2be;
 }
 
 /* --- BASE STYLES --- */
@@ -82,7 +82,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* Timer Styling to prevent Jitter */
 #clock {
     font-variant-numeric: tabular-nums;
     font-family: 'Courier New', monospace;
@@ -93,46 +92,12 @@ body {
 
 .red { color: var(--f1-red); font-weight: bold; }
 
-/* --- ABOUT SECTION --- */
-.driver-card {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.driver-number {
-    font-family: 'Syncopate', sans-serif;
-    font-size: 6rem;
-    color: var(--f1-red);
-    opacity: 0.2;
-    line-height: 1;
-}
-
-.bio-text h1 {
-    font-family: 'Syncopate', sans-serif;
-    font-size: 2.2rem;
-    margin: 0 0 15px 0;
-    letter-spacing: -1px;
-}
-
-.bio-text p {
-    line-height: 1.6;
-    color: #cccccc;
-    font-size: 1.05rem;
-}
-
 /* --- PANEL SYSTEM --- */
 .panel {
     background: var(--f1-carbon);
     border-left: 4px solid var(--f1-red);
     padding: 25px;
     margin-bottom: 30px;
-    transition: background 0.3s ease;
-}
-
-.panel:hover {
-    background: #25252d;
 }
 
 .panel-header {
@@ -146,14 +111,27 @@ body {
     text-transform: uppercase;
 }
 
-/* --- WORK & EDUCATION ITEMS --- */
-.history-item { margin-bottom: 25px; }
-
-.history-item strong {
-    color: var(--f1-red); /* Role Name highlighted in Red */
+/* --- WORK EXPERIENCE SPECIFIC --- */
+.history-full .history-item strong {
+    color: var(--f1-red); /* Role name is Red */
     font-size: 1.1rem;
     display: block;
     margin-bottom: 5px;
+}
+
+/* --- CERTIFICATIONS SPECIFIC --- */
+.certifications-full .history-item strong {
+    color: var(--f1-white); /* Cert titles stay White */
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.certifications-full .history-item p {
+    color: var(--f1-purple); /* COMPANY NAME is now Purple */
+    font-size: 0.85rem;
+    margin: 5px 0;
+    font-weight: 700;
 }
 
 .year {
@@ -189,46 +167,16 @@ body {
     font-weight: bold;
 }
 
-/* Coursework Telemetry Styling */
-.course-telemetry {
-    margin-top: 15px;
-    padding-top: 10px;
-    border-top: 1px dashed var(--f1-grey);
-}
-
-.course-telemetry .label {
-    font-size: 0.7rem;
-    color: var(--f1-red);
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.course-telemetry p {
-    font-size: 0.85rem;
-    color: #888888;
-    line-height: 1.5;
-}
-
-/* --- SKILLS & GRIDS --- */
-.content-grid {
+/* --- GRIDS --- */
+.content-grid, .project-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
 
-.stat-group { margin-bottom: 20px; }
-.stat-group h4 {
-    color: var(--f1-red);
-    margin: 0 0 8px 0;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-}
-
-/* --- PROJECT CARDS --- */
-.project-grid {
+.certification-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
 
@@ -239,13 +187,10 @@ body {
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--f1-red);
-}
+.project-card:hover { border-color: var(--f1-red); }
 
 .sector-tag {
-    background: var(--f1-purple); /* Tertiary Metadata color */
+    background: var(--f1-purple);
     color: var(--f1-white);
     font-size: 0.65rem;
     padding: 4px 12px;
@@ -254,14 +199,7 @@ body {
     text-transform: uppercase;
 }
 
-/* --- CERTIFICATIONS GRID --- */
-.certification-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-/* --- BUTTONS & LINKS --- */
+/* --- LINKS --- */
 .btn-link {
     color: var(--f1-cyan);
     text-decoration: none;
@@ -276,12 +214,11 @@ body {
 .btn-link:hover {
     color: var(--f1-white);
     text-shadow: 0 0 10px var(--f1-cyan);
-    transform: translateX(5px);
 }
 
 /* --- CONTACT SECTION --- */
 .contact-section {
-    border-left: 4px solid var(--f1-red); /* Uniform Red border */
+    border-left: 4px solid var(--f1-red);
     background: var(--f1-carbon);
     padding: 40px;
     margin-top: 40px;
@@ -294,15 +231,7 @@ body {
     margin-top: 30px;
 }
 
-/* --- RESPONSIVE DESIGN --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 900px) {
-    .content-grid, .project-grid {
-        grid-template-columns: 1fr;
-    }
-    .driver-card {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-    .driver-number { font-size: 4rem; }
+    .content-grid, .project-grid { grid-template-columns: 1fr; }
 }
