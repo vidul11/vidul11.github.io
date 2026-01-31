@@ -3,20 +3,21 @@
     --f1-red: #e10600;
     --f1-black: #15151e;
     --f1-carbon: #1f1f27;
-    --f1-purple: #b62ad6; /* Sector purple for high-performance projects */
+    --f1-purple: #b62ad6; /* Sector purple for specialized research projects */
     --f1-grey: #38383f;
+    --f1-white: #ffffff;
 }
 
 /* --- BASE STYLES --- */
 body {
     background-color: var(--f1-black);
-    color: white;
+    color: var(--f1-white);
     font-family: 'Chakra Petch', sans-serif;
     margin: 0;
     overflow-x: hidden; 
 }
 
-/* --- F1 STARTING LIGHTS --- */
+/* --- F1 STARTING LIGHTS INTRO --- */
 #lights-container {
     position: fixed;
     height: 100vh;
@@ -40,29 +41,19 @@ body {
 
 .light.on { 
     background: var(--f1-red); 
-    box-shadow: 0 0 25px var(--f1-red); 
+    box-shadow: 0 0 30px var(--f1-red); 
 }
 
-/* Intro Text Styling */
 .status-text {
     margin-top: 30px;
-    font-family: 'Syncopate', sans-serif; /* High-impact racing font */
-    font-size: 2.5rem;                  /* Increased size */
+    font-family: 'Syncopate', sans-serif;
+    font-size: 2.2rem;
     font-weight: 700;
-    letter-spacing: 5px;                /* Spaced out for that TV look */
-    color: white;
-    text-transform: uppercase;          /* Always uppercase for F1 */
+    letter-spacing: 5px;
+    color: var(--f1-white);
+    text-transform: uppercase;
     text-align: center;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Subtle glow */
-    transition: all 0.3s ease;
-}
-
-/* Mobile adjustments for intro text */
-@media (max-width: 768px) {
-    .status-text {
-        font-size: 1.2rem;
-        letter-spacing: 2px;
-    }
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
 /* --- MAIN CONTENT & ANIMATION --- */
@@ -91,9 +82,8 @@ body {
 }
 
 .red { color: var(--f1-red); font-weight: bold; }
-.green { color: #00ff00; }
 
-/* --- ABOUT SECTION (THE DRIVER) --- */
+/* --- ABOUT SECTION (THE DRIVER PROFILE) --- */
 .driver-card {
     display: flex;
     align-items: center;
@@ -111,28 +101,23 @@ body {
 
 .bio-text h1 {
     font-family: 'Syncopate', sans-serif;
-    font-size: 2.5rem;
-    margin: 0 0 10px 0;
-    letter-spacing: -2px;
+    font-size: 2.2rem;
+    margin: 0 0 15px 0;
+    letter-spacing: -1px;
 }
 
 .bio-text p {
     line-height: 1.6;
-    color: #ccc;
-    font-size: 1.1rem;
+    color: #cccccc;
+    font-size: 1.05rem;
 }
 
-/* --- GRID & PANELS --- */
-.content-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
+/* --- PANEL SYSTEM --- */
 .panel {
     background: var(--f1-carbon);
     border-left: 4px solid var(--f1-red);
     padding: 25px;
+    margin-bottom: 30px;
     transition: background 0.3s ease;
 }
 
@@ -143,31 +128,43 @@ body {
 .panel-header {
     font-family: 'Syncopate', sans-serif;
     font-size: 0.75rem;
-    color: #888;
+    color: #888888;
     margin-bottom: 20px;
     letter-spacing: 2px;
     border-bottom: 1px solid #444;
-    padding-bottom: 5px;
-}
-
-/* --- SKILLS (TECHNICAL SPECS) --- */
-.stat-group { margin-bottom: 20px; }
-.stat-group h4 {
-    color: var(--f1-red);
-    margin: 0 0 5px 0;
-    font-size: 0.8rem;
+    padding-bottom: 8px;
     text-transform: uppercase;
 }
-.stat-group p { font-size: 0.95rem; color: #eee; margin: 0; }
 
-/* --- WORK EXP (RACE HISTORY) --- */
+/* --- GRID LAYOUTS --- */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* For Education & Skills side-by-side */
+    gap: 30px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* --- WORK & EDUCATION ITEMS --- */
 .history-item { margin-bottom: 25px; }
+
+.history-item strong {
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
 .year {
     font-size: 0.75rem;
     background: var(--f1-grey);
-    padding: 2px 6px;
+    padding: 2px 8px;
     border-radius: 2px;
     margin-right: 10px;
+    font-weight: bold;
 }
 
 .history-item ul {
@@ -177,11 +174,12 @@ body {
 }
 
 .history-item li {
-    font-size: 0.85rem;
-    color: #aaa;
-    margin-bottom: 6px;
-    padding-left: 15px;
+    font-size: 0.9rem;
+    color: #aaaaaa;
+    margin-bottom: 8px;
+    padding-left: 18px;
     position: relative;
+    line-height: 1.4;
 }
 
 .history-item li::before {
@@ -189,19 +187,23 @@ body {
     position: absolute;
     left: 0;
     color: var(--f1-red);
+    font-weight: bold;
 }
 
-/* --- PROJECTS (SEASON HIGHLIGHTS) --- */
-.projects-full { margin-top: 30px; }
-.project-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+/* --- SKILLS STYLING --- */
+.stat-group { margin-bottom: 20px; }
+.stat-group h4 {
+    color: var(--f1-red);
+    margin: 0 0 8px 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
 }
+.stat-group p { font-size: 0.95rem; color: #eeeeee; margin: 0; line-height: 1.5; }
 
+/* --- PROJECT CARDS --- */
 .project-card {
     background: #1a1a21;
-    padding: 20px;
+    padding: 25px;
     border: 1px solid #333;
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
@@ -211,12 +213,15 @@ body {
     border-color: var(--f1-red);
 }
 
+.project-card h3 { margin-top: 15px; margin-bottom: 10px; }
+
 .sector-tag {
     background: var(--f1-purple);
     font-size: 0.65rem;
-    padding: 3px 10px;
-    border-radius: 10px;
+    padding: 4px 12px;
+    border-radius: 12px;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 /* --- RESPONSIVE DESIGN --- */
@@ -228,8 +233,13 @@ body {
     .driver-card {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 15px;
     }
     
     .driver-number { font-size: 4rem; }
+    
+    .status-text {
+        font-size: 1.4rem;
+        letter-spacing: 2px;
+    }
 }
