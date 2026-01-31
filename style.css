@@ -3,7 +3,8 @@
     --f1-red: #e10600;
     --f1-black: #15151e;
     --f1-carbon: #1f1f27;
-    --f1-purple: #b62ad6; /* Sector purple for specialized research projects */
+    --f1-cyan: #00d2be; /* Neon Cyan for data/tech elements */
+    --f1-purple: #b62ad6; 
     --f1-grey: #38383f;
     --f1-white: #ffffff;
 }
@@ -139,7 +140,7 @@ body {
 /* --- GRID LAYOUTS --- */
 .content-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* For Education & Skills side-by-side */
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
 
@@ -190,6 +191,29 @@ body {
     font-weight: bold;
 }
 
+/* Coursework Telemetry Styling */
+.course-telemetry {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--f1-grey);
+}
+
+.course-telemetry .label {
+    font-size: 0.7rem;
+    color: var(--f1-red);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.course-telemetry p {
+    font-size: 0.85rem;
+    color: #888888;
+    line-height: 1.5;
+    margin: 0;
+}
+
 /* --- SKILLS STYLING --- */
 .stat-group { margin-bottom: 20px; }
 .stat-group h4 {
@@ -216,12 +240,32 @@ body {
 .project-card h3 { margin-top: 15px; margin-bottom: 10px; }
 
 .sector-tag {
-    background: var(--f1-purple);
+    background: var(--f1-cyan);
+    color: #000;
     font-size: 0.65rem;
     padding: 4px 12px;
     border-radius: 12px;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+/* --- NEON CYAN PROJECT LINKS --- */
+.btn-link {
+    color: var(--f1-cyan);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.btn-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px var(--f1-cyan);
+    transform: translateX(5px);
 }
 
 /* --- RESPONSIVE DESIGN --- */
