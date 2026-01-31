@@ -103,7 +103,7 @@ body {
 .panel-header {
     font-family: 'Syncopate', sans-serif;
     font-size: 0.75rem;
-    color: #888888;
+    color: #888888; /* Headers stay neutral grey/white */
     margin-bottom: 20px;
     letter-spacing: 2px;
     border-bottom: 1px solid #444;
@@ -111,27 +111,25 @@ body {
     text-transform: uppercase;
 }
 
-/* --- WORK EXPERIENCE SPECIFIC --- */
+/* --- WORK EXPERIENCE SPECIFIC STYLES --- */
 .history-full .history-item strong {
-    color: var(--f1-red); /* Role name is Red */
+    color: var(--f1-red); /* ROLE is Red */
     font-size: 1.1rem;
     display: block;
     margin-bottom: 5px;
 }
 
-/* --- CERTIFICATIONS SPECIFIC --- */
+.history-full .history-item p,
+.history-full .history-item span {
+    color: var(--f1-white); /* COMPANY NAME and context stay White */
+}
+
+/* --- CERTIFICATIONS SPECIFIC STYLES --- */
 .certifications-full .history-item strong {
-    color: var(--f1-white); /* Cert titles stay White */
+    color: var(--f1-white); /* Cert titles stay White as per your request */
     font-size: 1rem;
     display: block;
     margin-bottom: 5px;
-}
-
-.certifications-full .history-item p {
-    color: var(--f1-purple); /* COMPANY NAME is now Purple */
-    font-size: 0.85rem;
-    margin: 5px 0;
-    font-weight: 700;
 }
 
 .year {
@@ -167,7 +165,7 @@ body {
     font-weight: bold;
 }
 
-/* --- GRIDS --- */
+/* --- GRIDS & CARDS --- */
 .content-grid, .project-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
