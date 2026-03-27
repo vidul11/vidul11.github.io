@@ -493,7 +493,8 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 12px;
-    flex-grow: 1;
+    flex: 1;
+    min-width: 0;
 }
 
 .data-row {
@@ -517,6 +518,7 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 
 .status-active {

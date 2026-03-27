@@ -29,27 +29,8 @@
             <div class="stat">CURRENT LAP TIME: <span id="clock">00:00:00</span></div>
         </nav>
 
-        <div class="content-grid" style="align-items: stretch; margin-bottom: 30px;">
-            <section class="panel about-section" style="margin-bottom: 0;">
-                <div class="driver-card">
-                    <div class="driver-number">11</div>
-                    <div class="bio-text">
-                        <h1 class="glitch" data-text="SAI SURYA VIDUL">SAI SURYA VIDUL CHINTHAMANENI</h1>
-                        <p>
-                            My race started in Hyderabad, earning a Bachelor's in Electrical & Electronics Engineering at
-                            GRIET, before shifting gears to the international circuit at UC Riverside. Having graduated with
-                            a Master's in Electrical Engineering and a 3.82 GPA, I am LA based and focused on my core
-                            expertise in LLM/VLM fine-tuning, model inference, and evaluation. My research at the TASL Lab
-                            involved architecting efficient reasoning frameworks for large-scale models to reduce
-                            computational latency. When I'm off the clock, you can find me watching F1, gaming, hitting the
-                            gym, or catching up on the latest anime. I leverage Python, PyTorch, and AWS to build AI
-                            solutions that are as high-performing as they are reliable.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="panel" style="margin-bottom: 0; display: flex; align-items: center; justify-content: center;">
+        <div style="display: grid; grid-template-columns: 420px 1fr; gap: 30px; align-items: stretch; margin-bottom: 30px;">
+            <section style="margin-bottom: 0; display: flex; align-items: center; justify-content: center; flex: 0 0 420px;">
                 <div class="super-license-card">
                     <div class="license-header-strip">
                         <span>CONTACT CARD</span>
@@ -70,6 +51,7 @@
                                 <span class="value status-active">SEEKING FULL TIME POSITIONS</span>
                             </div>
                         </div>
+                        <div class="driver-number" style="font-size: 5rem; width: 80px; text-align: center; align-self: flex-start; margin-top: 4px; opacity: 0.9; flex-shrink: 0;">11</div>
                     </div>
                     <div class="license-footer">
                         <div class="barcode"></div>
@@ -85,6 +67,22 @@
                             </a>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section class="panel about-section" style="margin-bottom: 0;">
+                <div class="bio-text">
+                    <h1 class="glitch" data-text="SAI SURYA VIDUL">SAI SURYA VIDUL CHINTHAMANENI</h1>
+                    <p>
+                        My race started in Hyderabad, earning a Bachelor's in Electrical & Electronics Engineering at
+                        GRIET, before shifting gears to the international circuit at UC Riverside. Having graduated with
+                        a Master's in Electrical Engineering and a 3.82 GPA, I am LA based and focused on my core
+                        expertise in LLM/VLM fine-tuning, model inference, and evaluation. My research at the TASL Lab
+                        involved architecting efficient reasoning frameworks for large-scale models to reduce
+                        computational latency. When I'm off the clock, you can find me watching F1, gaming, hitting the
+                        gym, or catching up on the latest anime. I leverage Python, PyTorch, and AWS to build AI
+                        solutions that are as high-performing as they are reliable.
+                    </p>
                 </div>
             </section>
         </div>
@@ -275,6 +273,15 @@
                         simulators. Utilized transfer learning on synthetic datasets to accurately predict temperature
                         distributions across unseen chiplet layouts.</p>
                     <a href="https://github.com/TRIGGERONE/ThermalGCN" class="btn-link" target="_blank">VIEW SPECS ></a>
+                </div>
+
+                <div class="project-card">
+                    <span class="sector-tag">EDGE_AI</span>
+                    <h3>Real-Time ML Inference on Jetson Orin Nano</h3>
+                    <p>Deployed a cuDNN-accelerated LeNet model on NVIDIA Jetson Orin Nano with ROS2 for real-time
+                        face recognition from live camera streams. Benchmarked GPU vs CPU inference, validating a
+                        production-ready embedded ML pipeline at the edge.</p>
+                    <a href="#" class="btn-link">VIEW SPECS ></a>
                 </div>
             </div>
         </section>
